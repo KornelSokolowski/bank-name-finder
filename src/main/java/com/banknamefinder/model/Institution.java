@@ -1,11 +1,15 @@
 package com.banknamefinder.model;
 
 import jakarta.xml.bind.annotation.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @XmlRootElement(name = "Instytucja")
 @XmlAccessorType(XmlAccessType.FIELD)
+@Getter
+@Setter
 public class Institution {
 
     @XmlElement(name = "TypInstytucji")
@@ -36,7 +40,7 @@ public class Institution {
     private String www;
 
     @XmlElement(name = "Jednostka")
-    private List<Bank> bank;
+    private List<Banks> banks;
 
     @Override
     public String toString() {
@@ -50,7 +54,7 @@ public class Institution {
                 ", nip='" + nip + '\'' +
                 ", identyfikatorLEI='" + identyfikatorLEI + '\'' +
                 ", www='" + www + '\'' +
-                ", bank=" + bank +
+                ", bank=" + banks +
                 '}';
     }
 }
